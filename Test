@@ -1,10 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
-<haed>
-  <meta charset="UTF-8">
-  <title>Test Wedding</title>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pamphlet</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+     <style>
+
+        body #temp{
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .swiper-container {
+            height: 740px;
+            align-self: center;
+
+        }
+
+        .swiper-slide {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: beige;
+            border-radius: 30px;
+        }
+
+
+        .swiper-slide img {
+            max-width: 90%; /* This will ensure the image fits within the slide. */
+            height: auto; /* This will maintain the image's aspect ratio. */
+            display: block; /* This will remove any additional space below the image. */
+            margin: 8px auto; /* This centers the image horizontally and adds some space above and below. */
+        }
+
+
+    </style>
 </head>
-<body>
-  Hello Wedding
+<body id="temp">
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            1
+        </div>
+
+        <div class="swiper-slide">
+            2
+        </div>
+        <div class="swiper-slide">
+            3
+        </div>
+
+        <div class="swiper-slide">
+            4
+        </div>
+
+
+    </div>
+    <div class="swiper-pagination"></div>
+
+</div>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        grabCursor: true,
+        effect: "cards",
+        perSlideOffset: 5,
+        perSlideRotate: 8,
+        creativeEffect: {
+            prev: {
+                shadow: true,
+                translate: ["-120%", 0, -500],
+            },
+            next: {
+                shadow: true,
+                translate: ["120%", 0, -500],
+            },
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        slideToClickedSlide: true
+    });
+
+</script>
 </body>
 </html>
